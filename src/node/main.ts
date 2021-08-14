@@ -19,6 +19,9 @@ export const runVsCodeCli = (args: DefaultedArgs): void => {
       CODE_SERVER_PARENT_PID: process.pid.toString(),
     },
   })
+    /**
+  shows a message. 
+  **/
   vscode.once("message", (message: any) => {
     logger.debug("got message from VS Code", field("message", message))
     if (message.type !== "ready") {
